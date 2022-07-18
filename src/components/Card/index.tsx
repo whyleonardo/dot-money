@@ -1,6 +1,6 @@
 import { ArrowCircleUp } from 'phosphor-react'
 
-import { Container } from './style'
+import { Container } from './styles'
 
 export const Card = () => {
   return (

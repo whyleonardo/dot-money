@@ -1,32 +1,26 @@
-import { Container } from './style'
+import { Container, MobileContainer, TableContainer, Title } from './styles'
+import { TableHeader } from '../TableHeader'
+import { TableItem } from '../TableItem'
+import { TransactionsCard } from '../TransactionsCard/index'
 
 export const TransactionsTable = () => {
   return (
-    <Container>
-      <table>
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Valor</th>
-            <th>Categoria</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Desenvolvimento Web</td>
-            <td className="deposit">12 mil</td>
-            <td>Desenvolvimento</td>
-            <td>20/02/2022</td>
-          </tr>
-          <tr>
-            <td>Aluguel</td>
-            <td className="withdraw">- 1 mil</td>
-            <td>Casa</td>
-            <td>17/02/2022</td>
-          </tr>
-        </tbody>
-      </table>
-    </Container>
+    <>
+      <Container>
+        <TableContainer>
+          <TableHeader />
+          <TableItem />
+          <TableItem />
+        </TableContainer>
+      </Container>
+      <MobileContainer>
+        <Title>
+          <span>Listagem</span>
+          <p>1 item</p>
+        </Title>
+        <TransactionsCard />
+        <TransactionsCard />
+      </MobileContainer>
+    </>
   )
 }
