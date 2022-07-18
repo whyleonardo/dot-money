@@ -1,5 +1,13 @@
-import './global.css'
+import { Dashboard } from './components/Dashboard'
+import { Header } from './components/Header/index'
+import { GlobalStyle } from './styles/global'
 
 export const App = () => {
-  return <div>Oi</div>
+  return (
+    <>
+      <Header />
+      <Dashboard />
+      <GlobalStyle />
+    </>
+  )
 }
