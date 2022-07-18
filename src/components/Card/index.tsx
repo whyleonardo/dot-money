@@ -1,13 +1,19 @@
 import { ArrowCircleUp } from 'phosphor-react'
-
+import { ReactNode } from 'react'
 import { Container } from './styles'
 
-export const Card = () => {
+interface CardProps {
+  children: ReactNode
+  title: string
+  className?: string
+}
+
+export const Card = ({ children, className, title }: CardProps) => {
   return (
-    <Container>
+    <Container className={className}>
       <header>
-        <p>Entradas</p>
-        <ArrowCircleUp size={32} />
+        <p>{title}</p>
+        {children}
       </header>
       <strong>1000 conto</strong>
     </Container>

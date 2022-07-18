@@ -4,19 +4,29 @@ import {
   ArrowCircleDown,
   CurrencyCircleDollar
 } from 'phosphor-react'
-import { Card } from '../Card'
 
+import { Card } from '../Card'
 import { Container } from './styles'
 
 export const Summary = () => {
   return (
     <>
       <Container>
-        <Card />
+        <Card
+          title="Entradas"
+          children={<ArrowCircleUp color={'var(--green)'} size={32} />}
+        />
 
-        <Card />
+        <Card
+          title="Saídas"
+          children={<ArrowCircleDown color={'var(--red)'} size={32} />}
+        />
 
-        <Card />
+        <Card
+          title="Total"
+          className="highlight-background"
+          children={<CurrencyCircleDollar color={'var(--shape)'} size={32} />}
+        />
       </Container>
     </>
   )

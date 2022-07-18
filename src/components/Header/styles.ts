@@ -14,7 +14,7 @@ export const Content = styled.div`
   padding-bottom: 12rem;
 `
 
-export const Button = styled.button`
+export const ButtonHeader = styled.button`
   color: var(--blue-light);
   font-weight: 500;
   background-color: var(--shape);

@@ -1,12 +1,21 @@
-import { Logo } from '../Logo'
-import { Button, Container, Content } from './styles'
+import { MouseEventHandler, useState } from 'react'
 
-export const Header = () => {
+import { Logo } from '../Logo'
+import { ButtonHeader, Container, Content } from './styles'
+import Modal from 'react-modal'
+
+interface HeaderProps {
+  onOpenNewTransactionModal: () => void
+}
+
+export const Header = ({ onOpenNewTransactionModal }: HeaderProps) => {
   return (
     <Container>
       <Content>
         <Logo />
-        <Button type="button">Nova Transação</Button>
+        <ButtonHeader onClick={onOpenNewTransactionModal} type="button">
+          Nova Transação
+        </ButtonHeader>
       </Content>
     </Container>
   )
