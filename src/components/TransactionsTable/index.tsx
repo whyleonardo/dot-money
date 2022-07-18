@@ -1,7 +1,7 @@
 import { Container, MobileContainer, TableContainer, Title } from './styles'
 import { TableHeader } from '../TableHeader'
 import { TableItem } from '../TableItem'
-import { TransactionsCard } from '../TransactionsCard/index'
+import { TransactionCard } from '../TransactionCard'
 
 export const TransactionsTable = () => {
   return (
@@ -18,8 +18,8 @@ export const TransactionsTable = () => {
           <span>Listagem</span>
           <p>1 item</p>
         </Title>
-        <TransactionsCard />
-        <TransactionsCard />
+        <TransactionCard />
+        <TransactionCard />
       </MobileContainer>
     </>
   )

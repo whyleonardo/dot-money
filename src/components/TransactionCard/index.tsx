@@ -1,6 +1,6 @@
 import { Card } from './styles'
 
-export const TransactionsCard = () => {
+export const TransactionCard = () => {
   return (
     <Card>
       <header>
