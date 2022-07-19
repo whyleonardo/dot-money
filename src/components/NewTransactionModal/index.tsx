@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Modal from 'react-modal'
 
 import {
@@ -10,6 +10,7 @@ import {
 } from './styles'
 
 import { X, ArrowCircleDown, ArrowCircleUp } from 'phosphor-react'
+import { api } from '../../services/api'
 
 interface ModalProps {
   isOpen: boolean
@@ -18,6 +19,23 @@ interface ModalProps {
 
 export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
   const [type, setType] = useState('deposit')
+
+  const [title, setTitle] = useState('')
+  const [value, setValue] = useState(0)
+  const [category, setCategory] = useState('')
+
+  function handleCreateNewTransaction(event: FormEvent) {
+    event.preventDefault()
+  }
+
+  const data = {
+    title,
+    value,
+    category,
+    type
+  }
+
+  // api.post('/transactions', data)
 
   return (
     <Modal
@@ -33,9 +51,20 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
         </CloseButton>
       </HeaderContainer>
 
-      <Container>
-        <input type="text" placeholder="Título" />
-        <input type="number" pattern="[0-9]*" placeholder="Valor" />
+      <Container onSubmit={handleCreateNewTransaction}>
+        <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          type="text"
+          placeholder="Título"
+        />
+
+        <input
+          value={value}
+          onChange={e => setValue(Number(e.target.value))}
+          type="number"
+          placeholder="Valor"
+        />
 
         <TransactionTypeContainer>
           <RadioBox
@@ -59,7 +88,12 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
           </RadioBox>
         </TransactionTypeContainer>
 
-        <input type="text" placeholder="Categoria" />
+        <input
+          value={category}
+          onChange={e => setCategory(e.target.value)}
+          type="text"
+          placeholder="Categoria"
+        />
         <button type="submit">Cadastrar</button>
       </Container>
     </Modal>
