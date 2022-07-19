@@ -10,7 +10,7 @@ import {
 } from './styles'
 
 import { X, ArrowCircleDown, ArrowCircleUp } from 'phosphor-react'
-import { api } from '../../services/api'
+import { useTransactions } from '../../hooks/useTransactions'
 
 interface ModalProps {
   isOpen: boolean
@@ -18,24 +18,34 @@ interface ModalProps {
 }
 
 export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
-  const [type, setType] = useState('deposit')
+  const { createTransaction } = useTransactions()
 
+  const [type, setType] = useState('deposit')
   const [title, setTitle] = useState('')
-  const [value, setValue] = useState(0)
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
-  }
 
-  const data = {
-    title,
-    value,
-    category,
-    type
-  }
+    if (title != '' && amount > 0 && category != '') {
+      await createTransaction({
+        title,
+        type,
+        category,
+        amount
+      })
 
-  // api.post('/transactions', data)
+      setTitle('')
+      setAmount(0)
+      setCategory('')
+      setType('deposit')
+
+      onRequestClose()
+    } else {
+      alert('Preencha todos os campos!')
+    }
+  }
 
   return (
     <Modal
@@ -60,8 +70,8 @@ export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
         />
 
         <input
-          value={value}
-          onChange={e => setValue(Number(e.target.value))}
+          value={amount}
+          onChange={e => setAmount(Number(e.target.value))}
           type="number"
           placeholder="Valor"
         />

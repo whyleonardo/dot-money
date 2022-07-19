@@ -26,9 +26,7 @@ export const TableItem = ({
           }).format(amount)}
         </td>
         <td>{category}</td>
-        <td>
-          {new Intl.DateTimeFormat('pt-BR', {}).format(new Date(createdAt))}
-        </td>
+        <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(createdAt))}</td>
       </tr>
     </TBody>
   )

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useTransactions } from '../../hooks/useTransactions'
 import {
   ArrowCircleUp,
   ArrowCircleDown,
@@ -9,6 +9,8 @@ import { Card } from '../Card'
 import { Container } from './styles'
 
 export const Summary = () => {
+  const { transactions } = useTransactions()
+
   return (
     <>
       <Container>

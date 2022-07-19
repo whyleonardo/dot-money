@@ -1,15 +1,34 @@
 import { Card } from './styles'
 
-export const TransactionCard = () => {
+interface TransactionCardProps {
+  title: string
+  amount: number
+  type: string
+  category: string
+  createdAt: string
+}
+
+export const TransactionCard = ({
+  title,
+  type,
+  category,
+  amount,
+  createdAt
+}: TransactionCardProps) => {
   return (
     <Card>
       <header>
-        <p>Desenvolvimento de site</p>
-        <span className="deposit">12 mil</span>
+        <p>{title}</p>
+        <span className={type}>
+          {new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(amount)}
+        </span>
       </header>
       <div>
-        <p>Trabalho</p>
-        <span>12/12/2021</span>
+        <p>{category}</p>
+        <span>{new Intl.DateTimeFormat('pt-BR').format(new Date())}</span>
       </div>
     </Card>
   )
