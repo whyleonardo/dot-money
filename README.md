@@ -1,6 +1,10 @@
-# :tw-1f4b5: dot.money 
+# :money_with_wings:dot.money 
 
 <img src="imgs/desktop.png" alt="exemplo imagem">
+<img src="imgs/desktop-modal.png" alt="exemplo imagem">
+<img src="imgs/mobile.png" alt="exemplo imagem">
+<img src="imgs/mobile-modal.png" alt="exemplo imagem">
+
 
 > Projeto de uma carteira de saldo, que soma as entradas e saídas cadastradas na interface. Desenvolvido no módulo de React do Ignite da Rocketseat.
 
@@ -39,4 +43,4 @@ E acesse:
 <http://localhost:3000/>
 ```
 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+[⬆ Voltar ao topo]
