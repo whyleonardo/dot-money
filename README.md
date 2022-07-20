@@ -2,7 +2,7 @@
 
 <img src="imgs/desktop.png" alt="exemplo imagem">
 <img src="imgs/desktop-modal.png" alt="exemplo imagem">
-<img src="imgs/mobile.png" width='400' height='400' alt="exemplo imagem">
+<img src="imgs/mobile.png" width='400' height='800' alt="exemplo imagem">
 <img src="imgs/mobile-modal.png" alt="exemplo imagem">
 
 
