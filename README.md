@@ -1,6 +1,6 @@
 # :money_with_wings:dot.money 
 
-<div style='display:flex; flex-direction: column; justify-content: center; align-items: center'>
+<div style='display:flex; flex-direction: column; justify-content: center; align-items: center;'>
   <img src="imgs/desktop.png" alt="exemplo imagem">
   <img src="imgs/desktop-modal.png" alt="exemplo imagem">
   <img src="imgs/mobile.png" width='400' height='800' alt="exemplo imagem">
