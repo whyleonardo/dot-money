@@ -18,7 +18,7 @@ interface ModalProps {
 }
 
 export const NewTransactionModal = ({ isOpen, onRequestClose }: ModalProps) => {
-  const { createTransaction } = useTransactions()
+  const { createTransaction, transactions } = useTransactions()
 
   const [type, setType] = useState('deposit')
   const [title, setTitle] = useState('')

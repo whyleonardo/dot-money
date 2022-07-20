@@ -6,16 +6,23 @@ interface CardProps {
   children: ReactNode
   title: string
   className?: string
+  amount: number
 }
 
-export const Card = ({ children, className, title }: CardProps) => {
+export const Card = ({ children, className, title, amount }: CardProps) => {
   return (
     <Container className={className}>
       <header>
         <p>{title}</p>
         {children}
       </header>
-      <strong>1000 conto</strong>
+      <strong>
+        {' '}
+        {new Intl.NumberFormat('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }).format(amount)}
+      </strong>
     </Container>
   )
 }

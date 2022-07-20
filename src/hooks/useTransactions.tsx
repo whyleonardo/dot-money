@@ -50,7 +50,7 @@ export const TransactionsProvider = ({
 
     const { transaction } = response.data
 
-    setTransactions([...transactions, transaction])
+    setTransactions([transaction, ...transactions])
   }
 
   return (
